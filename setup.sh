@@ -198,8 +198,8 @@ else
 		mkdir ~/Wallpapers
 		cp -rv $dir/wallpapers/* ~/Wallpapers
 	fi
-	wal -nqi ~/Wallpapers/archkali.png
-	sudo wal -nqi ~/Wallpapers/archkali.png
+	wal -nqi ~/Wallpapers/Forests.png
+	sudo wal -nqi ~/Wallpapers/Forests.png
 	echo -e "\n${greenColour}[+] Done\n${endColour}"
 	sleep 1.5
 

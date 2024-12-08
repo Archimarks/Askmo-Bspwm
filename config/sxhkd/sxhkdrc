@@ -20,7 +20,7 @@ super + Escape
 
 # quit/restart bspwm
 super + alt + {q,r}
-	bspc {quit,wm -r}
+	bspc {quit,wm -r }
 
 # close and kill
 super + {_,shift + }w
@@ -82,7 +82,7 @@ super + {o,i}
 
 # focus or send to the given desktop
 super + {_,shift + }{1-9,0}
-	bspc {desktop -f,node -d} '^{1-9,10}'
+	bspc {desktop -f,node -d } '^{1-9,10}'
 
 #
 # preselect
