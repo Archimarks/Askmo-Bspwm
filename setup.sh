@@ -30,7 +30,11 @@ if [ "$user" == "root" ]; then
 	echo -e "\n\n${redColour}[!] You should not run the script as the root user!\n${endColour}"
     	exit 1
 else
-	
+	sudo apt update && sudo apt install zsh
+	sleep 1
+	chsh -s $(which zsh)
+	sleep 1
+	exec zsh
 	sleep 1
 	echo -e "\n\n${blueColour}[*] Installing necessary packages for the environment...\n${endColour}"
 	sleep 2
