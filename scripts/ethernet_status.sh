@@ -25,13 +25,15 @@ INTERFAZ=$(ip -o -4 addr show up | grep -v " lo " | awk '{print $2}' | head -n 1
 # Verificar si hay una interfaz activa con dirección IP
 if [ -n "$INTERFAZ" ]; then
     # Extraer la IP utilizando ifconfig
-    IP=$(echo "%{F#ffffff}  %{F#ffffff}$(/usr/sbin/ifconfig "$INTERFAZ" | grep 'inet ' | awk '{print $2}')%{u-}")
+    IP=$(/usr/sbin/ifconfig "$INTERFAZ" | grep 'inet ' | awk '{print $2}')
 
+    # Determinar el ícono según el tipo de interfaz
     if echo "$INTERFAZ" | grep -qE "wlan|wlx"; then
         ICONO=""  # Icono para Wi-Fi
     else
         ICONO=""  # Icono para Ethernet
     fi
+    # Mostrar salida con ícono al inicio, tipo de máquina, y IP
     echo "%{F#7dcfff}${ICONO} %{F#ffffff}${TIPO}: ${IP}%{u-}"
 else
     echo "%{F#ff0000} %{F#ffffff}No conectado en ${TIPO}%{u-}"
